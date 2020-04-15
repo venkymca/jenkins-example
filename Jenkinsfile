@@ -4,19 +4,19 @@ pipeline {
 		stage('---clean---'){
 			steps {
 				tool name: 'Maven_Local', type: 'maven'
-				 mvn clean
+				 bat "mvn clean"
 			}
 		}
 		stage('---test---') {
 			steps {
 				tool name: 'Maven_Local', type: 'maven'
-				 mvn test
+				bat "mvn test"
 			}
 		}
 		stage('---package---'){
 			steps {
 				tool name: 'Maven_Local', type: 'maven'
-				 mvn package
+				bat "mvn package"
 			}
 		}
 	}
