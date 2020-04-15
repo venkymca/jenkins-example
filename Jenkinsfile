@@ -1,15 +1,19 @@
 pipeline {
 	agent any
+	tools { 
+	         maven 'Maven_Local' 
+                 jdk 'Jdk_Localhost' 
+      }
 	stages {
 		stage('---clean---'){
 			steps {
-				tool name: 'Maven_Local', type: 'maven'
+				
 				 bat "mvn clean"
 			}
 		}
 		stage('---test---') {
 			steps {
-				tool name: 'Maven_Local', type: 'maven'
+				
 				bat "mvn test"
 			}
 		}
