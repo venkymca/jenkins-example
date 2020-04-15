@@ -23,5 +23,13 @@ pipeline {
 				bat "mvn package"
 			}
 		}
+		
+		stage('---deploy to tomcat---'){
+			steps {
+				bat("xcopy C:\Program Files (x86)\Jenkins\workspace\Pipeline-maven\target\jenkins-example-1.0-SNAPSHOT.jar C:\Program Files\Apache Software Foundation\Tomcat 8.5\webapps)
+			}
+		}
+		
+		
 	}
 }
